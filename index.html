@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ember & Saffron — Fine Indian Dining</title>
+<meta name="description" content="Ember & Saffron — an intimate, candlelit Indian fine-dining experience.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Work+Sans:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="ember-glow" aria-hidden="true"></div>
+
+<!-- ===== NAV ===== -->
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="#top" class="nav-logo">Ember <span class="amp">&</span> Saffron</a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav-links" id="navLinks">
+      <a href="#story">Story</a>
+      <a href="#menu">Menu</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#reserve" class="nav-cta">Reserve a table</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ===== HERO ===== -->
+<header class="hero" id="top">
+  <div class="hero-content">
+    <p class="eyebrow">Est. — Fine Indian Dining</p>
+    <h1 class="hero-title">Every dish,<br>lit by <span class="italic">candlelight.</span></h1>
+    <p class="hero-sub">An intimate table for those who taste slowly.</p>
+    <div class="hero-actions">
+      <a href="#reserve" class="btn btn-primary">Reserve a table</a>
+      <a href="#menu" class="btn btn-ghost">View menu</a>
+    </div>
+  </div>
+  <div class="hero-fade"></div>
+</header>
+
+<main>
+
+  <!-- ===== STORY ===== -->
+  <section class="section" id="story">
+    <div class="section-inner story-grid">
+      <div class="story-visual">
+  <div class="story-frame">
+    <img src="assets/images/restaurant_reception.png" alt="Ember & Saffron dining room" style="width:100%;height:100%;object-fit:cover;border-radius:var(--radius);">
+  </div>
+</div>
+      <div class="story-text">
+        <p class="section-eyebrow">Our Story</p>
+        <h2 class="section-title">Slow food, warm light.</h2>
+        <p class="body-text">
+          Ember & Saffron began with a simple idea: that a meal is not just
+          eaten, it's lived in. Every table is lit by candle, every spice
+          is ground the day it's used, and every dish arrives when it's
+          ready — not a minute before.
+        </p>
+        <p class="body-text">
+          Our kitchen draws from generations of Indian cooking, reworked
+          for a quieter, slower kind of evening.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== MENU ===== -->
+  <section class="section section-alt" id="menu">
+    <div class="section-inner">
+      <p class="section-eyebrow center">The Menu</p>
+      <h2 class="section-title center">A taste of the evening</h2>
+
+      <div class="menu-tabs" id="menuTabs">
+        <button class="menu-tab active" data-cat="starters">Starters</button>
+        <button class="menu-tab" data-cat="mains">Mains</button>
+        <button class="menu-tab" data-cat="desserts">Desserts</button>
+        <button class="menu-tab" data-cat="drinks">Drinks</button>
+      </div>
+
+      <div class="menu-list" id="menuList"></div>
+    </div>
+  </section>
+
+  <!-- ===== GALLERY ===== -->
+  <section class="section" id="gallery">
+    <div class="section-inner">
+      <p class="section-eyebrow center">Gallery</p>
+      <h2 class="section-title center">From the table</h2>
+      <div class="gallery-grid" id="galleryGrid">
+        <!-- filled by js — placeholders until real photos are added -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== RESERVE ===== -->
+  <section class="section section-alt" id="reserve">
+    <div class="section-inner reserve-grid">
+      <div class="reserve-text">
+        <p class="section-eyebrow">Reservations</p>
+        <h2 class="section-title">Book your table</h2>
+        <p class="body-text">
+          Tables are limited each evening to keep the room quiet.
+          We recommend reserving at least two days ahead for weekends.
+        </p>
+        <div class="info-block">
+          <div class="info-row"><span class="info-label">Hours</span><span>Tue–Sun, 6 PM – 11 PM</span></div>
+          <div class="info-row"><span class="info-label">Location</span><span>Add your address here</span></div>
+          <div class="info-row"><span class="info-label">Phone</span><span>Add your number here</span></div>
+        </div>
+      </div>
+
+      <form class="reserve-form glass" id="reserveForm">
+        <div class="form-row">
+          <label for="rName">Name</label>
+          <input type="text" id="rName" name="name" required>
+        </div>
+        <div class="form-row">
+          <label for="rPhone">Phone</label>
+          <input type="tel" id="rPhone" name="phone" required>
+        </div>
+        <div class="form-row form-row-split">
+          <div>
+            <label for="rDate">Date</label>
+            <input type="date" id="rDate" name="date" required>
+          </div>
+          <div>
+            <label for="rGuests">Guests</label>
+            <select id="rGuests" name="guests">
+              <option>1</option><option>2</option><option>3</option>
+              <option>4</option><option>5</option><option>6+</option>
+            </select>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary btn-full">Confirm reservation</button>
+        <p class="form-note" id="formNote"></p>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <p>Ember & Saffron — a table for slow evenings.</p>
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>
